@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    <h2>Index page</h2>
+
+    <a href="{% url 'resumes:new' %}">new resume</a>
+
+    {% for resume in resumes %}
+        <p>Title: <a href="{% url 'resumes:show' resume.id%}" >{{resume.title}}</a></p>
+        <p>Price: {{resume.price}}, Desc: {{resume.desc}}</p>
+    {% endfor %}
+{% endblock content %}

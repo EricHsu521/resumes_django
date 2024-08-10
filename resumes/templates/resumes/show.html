@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    <p>Title: {{resume.title}}</p>
+    <p>Price: {{resume.price}}</p>
+    <p>Desc: {{resume.desc}}</p>
+
+    <a href="{% url 'resumes:edit' resume.id %}">edit</a>
+    <a href="{% url 'resumes:delete' resume.id %}">delete</a>
+{% endblock content %}
+
